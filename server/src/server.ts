@@ -2,10 +2,13 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { createServer } from "http";
+import dns from "dns";
 import authRoutes from "./routes/authRoutes";
 import workspaceRoutes from "./routes/workspaceRoutes";
+import { createServer } from "http";
 import { initSocket } from "./config/socket";
+
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 dotenv.config();
 const app = express();
