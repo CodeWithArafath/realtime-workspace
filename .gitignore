@@ -5,3 +5,10 @@ server/dist/
 .env
 server/.env
 client/.env
+node_modules/
+.env
+dist/
+build/
+coverage/
+*.log
+.vscode/

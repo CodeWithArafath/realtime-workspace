@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoutes";
 import workspaceRoutes from "./routes/workspaceRoutes";
 import { createServer } from "http";
 import { initSocket } from "./config/socket";
+import channelRoutes from "./routes/channelRoutes";
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
@@ -23,6 +24,7 @@ app.get("/api/health", (_req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/workspaces", workspaceRoutes);
+app.use("/api/channels", channelRoutes);
 
 initSocket(httpServer);
 
