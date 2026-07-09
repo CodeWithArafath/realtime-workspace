@@ -9,11 +9,11 @@ export const createWorkspace = async (req: AuthRequest, res: Response) => {
     const inviteCode = crypto.randomBytes(4).toString("hex");
 
     const workspace = await Workspace.create({
-      name,
-      owner: req.userId,
-      members: [req.userId],
-      inviteCode,
-    });
+  name,
+  owner: req.userId as string,
+  members: [req.userId as string],
+  inviteCode,
+});
 
     res.status(201).json(workspace);
   } catch (err) {
